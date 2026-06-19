@@ -1,117 +1,922 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rahayu "Yuki" Rahmadhani | Portfolio</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Portofolio Rahayu Rahmadhani - Cyber Security, UI/UX Designer & Creative Artist">
+    <title>Rahayu Rahmadhani | Cyber Security & UI/UX Portfolio</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        .glass { background: rgba(0, 0, 0, 0.6); backdrop-filter: blur(12px); }
-        .gradient-text { 
-            background: linear-gradient(90deg, #a855f7, #ec4899); 
-            -webkit-background-clip: text; 
-            -webkit-text-fill-color: transparent; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        .purple-glow { box-shadow: 0 0 20px rgba(168, 85, 247, 0.3); }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #FFF8E7;
+            color: #2d2a24;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --cosmic-latte: #FFF8E7;
+            --sangria: #930500;
+            --sangria-dark: #6e0300;
+            --sangria-light: #b84a3a;
+            --cornflower: #95BBEA;
+            --cornflower-dark: #6c9bd6;
+            --deep-charcoal: #2c2823;
+            --warm-gray: #4a443c;
+            --card-bg: #FFFFFF;
+        }
+
+        .navbar {
+            background: #FFF8E7 !important;
+            padding: 0.7rem 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(147, 5, 0, 0.08);
+            border-bottom: 2px solid #930500;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.6rem;
+            letter-spacing: -0.3px;
+            color: #930500 !important;
+        }
+        .nav-link {
+            font-weight: 600;
+            color: #4a3b32 !important;
+            margin: 0 0.5rem;
+            transition: 0.2s;
+            font-size: 0.9rem;
+            position: relative;
+        }
+        .nav-link:hover {
+            color: #930500 !important;
+        }
+        .nav-link.active {
+            color: #930500 !important;
+            border-bottom: 2px solid #930500;
+        }
+        .navbar-toggler {
+            border: none;
+            outline: none;
+        }
+        .navbar-toggler-icon {
+            background-image: none;
+            font-size: 1.6rem;
+            color: #930500;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-modern {
+            background: #FFF8E7;
+            position: relative;
+            padding: 7rem 0 4rem;
+            border-bottom: 2px solid #930500;
+        }
+        .hero-badge {
+            background: rgba(147, 5, 0, 0.1);
+            border: 1px solid #930500;
+            color: #930500;
+            border-radius: 60px;
+            padding: 6px 18px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            display: inline-block;
+        }
+        .hero-name {
+            font-size: 3.5rem;
+            font-weight: 800;
+            font-family: 'Poppins', sans-serif;
+            letter-spacing: -1px;
+            color: #930500;
+        }
+        .hero-img {
+            border-radius: 2rem;
+            box-shadow: 0 25px 40px -12px rgba(147, 5, 0, 0.25);
+            border: 3px solid #930500;
+            transition: transform 0.3s;
+            max-width: 280px;
+            background: #f0e4d4;
+            object-fit: cover;
+        }
+        .hero-img:hover {
+            transform: scale(1.02);
+        }
+        .tech-badge {
+            background: rgba(147, 5, 0, 0.08);
+            border-radius: 60px;
+            padding: 6px 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #930500;
+            border: 1px solid #930500;
+        }
+
+        .section-title-modern {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+            letter-spacing: -0.3px;
+            position: relative;
+            display: inline-block;
+            color: #930500;
+        }
+        .section-title-modern:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: #930500;
+            border-radius: 4px;
+        }
+        .text-center .section-title-modern:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .card-glass {
+            background: #FFFFFF;
+            border-radius: 1.5rem;
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            border: 1px solid rgba(147, 5, 0, 0.2);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.03);
+        }
+        .card-glass:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 35px -12px rgba(147, 5, 0, 0.25);
+            border: 1px solid #930500;
+        }
+        .skill-icon-circle {
+            width: 70px;
+            height: 70px;
+            background: rgba(147, 5, 0, 0.1);
+            border-radius: 30px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #930500;
+            margin-bottom: 1rem;
+            transition: 0.2s;
+        }
+        .card-glass:hover .skill-icon-circle {
+            background: rgba(147, 5, 0, 0.2);
+            color: #930500;
+        }
+
+        .tools-badge-modern {
+            background: #f4ede4;
+            padding: 6px 16px;
+            border-radius: 40px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            color: #4a3b32;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin: 4px;
+            border: 1px solid rgba(147, 5, 0, 0.2);
+        }
+        .contact-icon {
+            background: rgba(147, 5, 0, 0.1);
+            width: 40px;
+            height: 40px;
+            border-radius: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #930500;
+        }
+        .btn-gradient {
+            background: #930500;
+            border: none;
+            border-radius: 60px;
+            padding: 12px 28px;
+            font-weight: 600;
+            color: white;
+            transition: 0.2s;
+            box-shadow: 0 4px 10px rgba(147, 5, 0, 0.2);
+        }
+        .btn-gradient:hover {
+            background: #6e0300;
+            transform: scale(1.02);
+            color: white;
+            box-shadow: 0 8px 18px rgba(147, 5, 0, 0.3);
+        }
+        .btn-outline-modern {
+            border: 1.5px solid #930500;
+            background: transparent;
+            border-radius: 60px;
+            padding: 10px 24px;
+            font-weight: 600;
+            color: #930500;
+            transition: 0.2s;
+        }
+        .btn-outline-modern:hover {
+            background: #930500;
+            color: white;
+            text-decoration: none;
+        }
+        .footer-modern {
+            background: #2c2823;
+            color: #e2dcd5;
+            padding: 2.5rem 0;
+            margin-top: 3rem;
+            border-top: 4px solid #930500;
+        }
+        .footer-modern a {
+            color: #95BBEA;
+            transition: 0.2s;
+        }
+        .footer-modern a:hover {
+            color: #FFF8E7;
+        }
+        .badge-light {
+            background-color: rgba(147, 5, 0, 0.1);
+            color: #930500;
+        }
+        .about-text strong, .info-list strong {
+            color: #930500;
+        }
+        .form-control:focus {
+            border-color: #930500;
+            box-shadow: 0 0 0 0.2rem rgba(147, 5, 0, 0.2);
+        }
+        .form-control {
+            border-radius: 60px;
+            border: 1px solid rgba(147, 5, 0, 0.2);
+            background: #ffffff;
+            padding: 0.6rem 1.2rem;
+        }
+        textarea.form-control {
+            border-radius: 1.2rem;
+        }
+        
+        /* unified card styles for certificates, activities & awards */
+        .cert-card, .activity-card, .award-card {
+            background: #FFFFFF;
+            border-radius: 1.2rem;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(147, 5, 0, 0.15);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .cert-card:hover, .activity-card:hover, .award-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -12px rgba(147, 5, 0, 0.2);
+            border-color: #930500;
+        }
+        .cert-img-wrapper, .activity-img-wrapper, .award-img-wrapper {
+            padding: 1.2rem;
+            background: #faf5ea;
+            text-align: center;
+            border-bottom: 1px solid rgba(147, 5, 0, 0.1);
+        }
+        .cert-img, .activity-img, .award-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 0.8rem;
+            border: 1px solid rgba(147, 5, 0, 0.2);
+            transition: transform 0.2s;
+        }
+        .cert-card:hover .cert-img, .activity-card:hover .activity-img, .award-card:hover .award-img {
+            transform: scale(1.02);
+        }
+        .cert-body, .activity-body, .award-body {
+            padding: 1.2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .award-desc {
+            font-size: 0.85rem;
+            color: #5a4d40;
+            margin-bottom: 1rem;
+        }
+        .cert-title, .activity-title, .award-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #2c2823;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .cert-title i, .activity-title i, .award-title i {
+            color: #930500;
+            font-size: 0.9rem;
+        }
+        .cert-badge, .activity-badge, .award-badge {
+            background: rgba(147, 5, 0, 0.1);
+            color: #930500;
+            font-size: 0.7rem;
+            padding: 4px 10px;
+            border-radius: 30px;
+            display: inline-block;
+            font-weight: 500;
+        }
+        .btn-view-award, .btn-view-cert, .btn-view-activity {
+            background: transparent;
+            border: 1px solid #930500;
+            border-radius: 40px;
+            padding: 6px 16px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #930500;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .btn-view-award:hover, .btn-view-cert:hover, .btn-view-activity:hover {
+            background: #930500;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Khusus teks-header pengganti gambar agar mirip dengan mockup */
+        .award-text-header {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #faf5ea;
+            border: 1px solid rgba(147, 5, 0, 0.2);
+            border-radius: 0.8rem;
+            color: #930500;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.4rem;
+            padding: 1rem;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-name {
+                font-size: 2.5rem;
+            }
+            .section-title-modern:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            .section-title-modern {
+                display: block;
+                text-align: center;
+            }
+            .cert-img, .activity-img, .award-img {
+                height: 150px;
+            }
+            .award-text-header {
+                height: 140px;
+                font-size: 1.2rem;
+            }
+        }
     </style>
 </head>
-<body class="bg-black text-slate-200">
+<body>
 
-    <nav class="fixed w-full z-50 glass border-b border-purple-900/50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <h1 class="text-xl font-extrabold tracking-tighter text-white">YUKI<span class="text-purple-500">.dev</span></h1>
-            <div class="hidden md:flex space-x-8 text-sm font-medium">
-                <a href="#about" class="hover:text-purple-400 transition">Tentang</a>
-                <a href="#journey" class="hover:text-purple-400 transition">Perjalanan</a>
-                <a href="#projects" class="hover:text-purple-400 transition">Proyek</a>
-                <a href="#contact" class="px-4 py-2 bg-purple-600 rounded-full hover:bg-purple-700 transition shadow-lg shadow-purple-500/20">Kontak</a>
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="#">Rahayu<span style="font-weight:500; color:#6e0300;"><div class="portofolio"></div></span></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"><i class="fas fa-bars"></i></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Beranda</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">Tentang</a></li>
+                <li class="nav-item"><a class="nav-link" href="#skills">Keahlian</a></li>
+                <li class="nav-item"><a class="nav-link" href="#certifications">Sertifikasi</a></li>
+                <li class="nav-item"><a class="nav-link" href="#projek">Projek</a></li>
+                <li class="nav-item"><a class="nav-link" href="#publikasi">Publikasi</a></li>
+                <li class="nav-item"><a class="nav-link" href="#awards">Prestasi &amp; Karya</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Kontak</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<section id="home" class="hero-modern" style="padding-top: 100px;">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 mb-4 mb-lg-0">
+                <span class="hero-badge mb-3"><i class="fas fa-shield-alt mr-1"></i> Cyber Security & UI/UX Design</span>
+                <h1 class="hero-name mt-3">Rahayu Rahmadhani</h1>
+                <p class="lead mt-3" style="color: #5a4d40;">Mahasiswa Teknik Informatika & Komputer 
+                <div class="d-flex flex-wrap mt-4">
+                    <span class="tech-badge mr-2 mb-2"><i class="fas fa-shield-virus"></i> Cyber Security Fundamental</span>
+                    <span class="tech-badge mr-2 mb-2"><i class="fas fa-palette"></i> UI/UX Design</span>
+                    <span class="tech-badge mr-2 mb-2"><i class="fas fa-drafting-compass"></i> Desain Kreatif</span>
+                
+                </div>
+                <div class="mt-4">
+                    <a href="https://dprmpr.rabbani.id/vote/DPRMPR20260109184641" target="_blank" class="btn-gradient mr-3"><i class="fas fa-vote-yea mr-2"></i>Vote Duta Rabbani 2026</a>
+                    <a href="#contact" class="btn-outline-modern"><i class="fas fa-paper-plane mr-2"></i>Hubungi Saya</a>
+                </div>
+            </div>
+            <div class="col-lg-5 text-center">
+                <img src="webcam-toy-photo188.jpg" alt="Rahayu Rahmadhani" class="hero-img img-fluid" onerror="this.onerror=null; this.src='https://placehold.co/400x400/FFF8E7/930500?text=Rahayu+Rahmadhani';">
             </div>
         </div>
-    </nav>
+    </div>
+</section>
 
-    <header class="pt-40 pb-20 px-6">
-        <div class="max-w-4xl mx-auto flex flex-col md:flex-row-reverse items-center gap-12">
-            <!-- Profile Image -->
-            <div class="flex-shrink-0">
-                <img src="webcam-toy-photo188.jpg" alt="Rahayu Rahmadhani" class="w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-purple-500 purple-glow shadow-2xl">
-            </div>
-            
-            <!-- Content -->
-            <div class="flex-1">
-                <div class="inline-flex items-center space-x-2 bg-purple-950/30 border border-purple-900 px-3 py-1 rounded-full mb-6">
-                    <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span></span>
-                    <span class="text-xs text-purple-300 uppercase tracking-widest">Available for Collaboration</span>
-                </div>
-                <h2 class="text-6xl md:text-8xl font-extrabold mb-6 leading-[1.1]">Cybersecurity <br><span class="gradient-text">& AI Enthusiast</span></h2>
-                <p class="text-slate-400 text-xl mb-10 max-w-2xl leading-relaxed">Rahayu Rahmadhani (Yuki). Mahasiswa Teknik Jaringan yang terobsesi pada keamanan sistem, pengembangan AI, dan desain intuitif. Membangun solusi masa depan dengan presisi teknis.</p>
-                <div class="flex gap-4">
-                    <a href="#projects" class="bg-purple-600 hover:bg-purple-700 px-8 py-4 rounded-xl font-bold transition transform hover:scale-105 shadow-lg shadow-purple-500/20">Eksplorasi Proyek</a>
-                    <a href="#contact" class="border border-purple-900 hover:bg-purple-950/50 px-8 py-4 rounded-xl font-bold transition">Hubungi Saya</a>
-                </div>
+<div class="container">
+    <section id="about" class="my-5 py-5">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="section-title-modern">Tentang Saya</h2>
             </div>
         </div>
-    </header>
+        <div class="row mt-4">
+            <div class="col-lg-7">
+                <p class="about-text" style="font-size: 1.05rem; line-height: 1.7; color:#4a3b32;">
+                    Halo! Saya <strong>Rahayu Rahmadhani</strong>, mahasiswa aktif <strong>Politeknik Negeri Ujung Pandang</strong>, 
+                    Jurusan Teknik Informatika dan Komputer. Saya memiliki ketertarikan besar dalam dunia keamanan siber 
+                    dan desain antarmuka yang intuitif.
+                </p>
+                <p class="mt-3" style="color:#4a3b32;">
+                   
+                </p>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <ul class="info-list list-unstyled">
+                            <li class="d-flex align-items-center mb-3"><i class="fas fa-graduation-cap" style="color:#930500; margin-right: 1rem;"></i> <strong>Pendidikan:</strong> D4 - Teknik Multimedia & Jaringan</li>
+                            <li class="d-flex align-items-center mb-3"><i class="fas fa-trophy" style="color:#930500; margin-right: 1rem;"></i> <strong>Prestasi:</strong> Juara 2 Kihajar STEM Nasional 2024</li>
 
-    <section id="journey" class="py-20 bg-gradient-to-b from-black to-purple-950/20">
-        <div class="max-w-4xl mx-auto px-6">
-            <h3 class="text-3xl font-bold mb-12 text-purple-400">Perjalanan Saya</h3>
-            <div class="space-y-8 border-l border-purple-900 pl-8">
-                <div class="relative">
-                    <div class="absolute -left-[41px] p-2 bg-purple-950 rounded-full border border-purple-500">🛡️</div>
-                    <h4 class="text-xl font-bold">Juara 2 Kihajar STEM Nasional 2024</h4>
-                    <p class="text-slate-400 mt-2">Mengembangkan Smart Power Station. Inovasi efisiensi energi skala nasional.</p>
+                            <li class="d-flex align-items-center mb-3"><i class="fas fa-map-marker-alt" style="color:#930500; margin-right: 1rem;"></i> <strong>Lokasi:</strong> Makassar, Indonesia</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul class="info-list list-unstyled">
+                            <li class="d-flex align-items-center mb-3"><i class="fas fa-laptop-code" style="color:#930500; margin-right: 1rem;"></i> <strong>Bidang:</strong> Cyber Security & UI/UX</li>
+                            <li class="d-flex align-items-center mb-3"><i class="fas fa-heart" style="color:#930500; margin-right: 1rem;"></i> <strong>Passion:</strong> Desain Interaksi, Keamanan Siber, Seni Kreatif</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="relative">
-                    <div class="absolute -left-[41px] p-2 bg-purple-950 rounded-full border border-purple-500">🌍</div>
-                    <h4 class="text-xl font-bold">Koordinator PDD GG Lestari (2026)</h4>
-                    <p class="text-slate-400 mt-2">Memimpin dokumentasi & kreatif untuk inisiatif lingkungan yang berdampak.</p>
-                </div>
-                <div class="relative">
-                    <div class="absolute -left-[41px] p-2 bg-purple-950 rounded-full border border-purple-500">🏫</div>
-                    <h4 class="text-xl font-bold">Mahasiswa Multimedia & Network Engineering</h4>
-                    <p class="text-slate-400 mt-2">Politeknik Negeri Ujung Pandang. Fokus pada Cyber Defense & AI Development.</p>
+            </div>
+            <div class="col-lg-5 mt-4 mt-lg-0">
+                <div class="card-glass p-4" style="background: white; border-radius: 1.8rem;">
+                    <div class="text-center">
+                        <i class="fas fa-quote-left fa-2x" style="color:#930500; opacity:0.7;"></i>
+                        <h5 class="font-weight-bold mt-2" style="color:#2c2823;">Motto Hidup</h5>
+                        <p class="font-italic" style="color: #5a4d40;">"Jatuh bangun bukan akhir, tapi bagian dari perjalanan."</p>
+                        <hr style="background:#930500; height: 1px;">
+                        <div class="d-flex justify-content-around mt-3">
+                            <span class="badge badge-light p-2"><i class="fas fa-shield-alt"></i> Cyber Fundamental</span>
+                            <span class="badge badge-light p-2"><i class="fas fa-pen-fancy"></i> UI/UX Design</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-20">
-        <div class="max-w-6xl mx-auto px-6">
-            <h3 class="text-3xl font-bold mb-12 text-center text-white">Proyek Unggulan</h3>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-slate-900/50 p-8 rounded-3xl border border-purple-900/50 hover:border-purple-500 transition group hover:purple-glow">
-                    <div class="text-purple-400 mb-6 text-4xl">🤖</div>
-                    <h4 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition">AI Child Growth</h4>
-                    <p class="text-slate-400 text-sm mb-6">Monitoring pertumbuhan berbasis AI untuk area terpencil. Mengintegrasikan machine learning untuk deteksi dini.</p>
-                    <div class="flex gap-2 text-xs font-mono text-purple-400 bg-purple-950 w-fit px-2 py-1 rounded">Python • TensorFlow</div>
+    <section id="skills" class="my-5 py-4">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card-glass p-4 h-100 text-center">
+                    <div class="skill-icon-circle mx-auto"><i class="fas fa-shield-virus"></i></div>
+                    <h4 class="font-weight-bold mt-3" style="color:#930500;">Cyber Security Fundamental</h4>
+                    <p class="text-secondary" style="color:#6b5b4e!important;">Pemahaman dasar keamanan siber, analisis risiko, kesadaran digital, dan praktik perlindungan data.</p>
+                    <div class="mt-3">
+                    </div>
                 </div>
-                <div class="bg-slate-900/50 p-8 rounded-3xl border border-purple-900/50 hover:border-fuchsia-500 transition group hover:purple-glow">
-                    <div class="text-fuchsia-400 mb-6 text-4xl">⚡</div>
-                    <h4 class="text-xl font-bold mb-2 group-hover:text-fuchsia-400 transition">Smart Power Station</h4>
-                    <p class="text-slate-400 text-sm mb-6">Juara 2 Kihajar STEM 2024. Inovasi perangkat keras cerdas berbasis IoT untuk manajemen energi.</p>
-                    <div class="flex gap-2 text-xs font-mono text-fuchsia-400 bg-fuchsia-950/20 w-fit px-2 py-1 rounded">IoT • Arduino</div>
+            </div>
+            <div class="col-md-6 mb-4">
+                <div class="card-glass p-4 h-100 text-center">
+                    <div class="skill-icon-circle mx-auto"><i class="fas fa-pen-fancy"></i></div>
+                    <h4 class="font-weight-bold mt-3" style="color:#930500;">UI/UX & Creative Design</h4>
+                    <p class="text-secondary" style="color:#6b5b4e!important;">Wireframing, prototyping, user research, serta ekspresi seni kreatif visual yang berpusat pada estetika.</p>
+                    <div class="mt-3">
+                        <span class="tools-badge-modern">Figma</span>
+                        <span class="tools-badge-modern">User Flow</span>
+                        <span class="tools-badge-modern">Prototyping</span>
+                        <span class="tools-badge-modern">Visual Art</span>
+                    </div>
                 </div>
-                <div class="bg-slate-900/50 p-8 rounded-3xl border border-purple-900/50 hover:border-purple-500 transition group hover:purple-glow">
-                    <div class="text-purple-400 mb-6 text-4xl">🛡️</div>
-                    <h4 class="text-xl font-bold mb-2 group-hover:text-purple-400 transition">Network Security</h4>
-                    <p class="text-slate-400 text-sm mb-6">Simulasi pentesting, analisis kerentanan jaringan, dan hardening sistem menggunakan industri tools.</p>
-                    <div class="flex gap-2 text-xs font-mono text-purple-400 bg-purple-950 w-fit px-2 py-1 rounded">Cisco • Linux</div>
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <div class="card-glass p-4" style="background: white;">
+                    <h5 class="font-weight-bold" style="color:#930500;"><i class="fas fa-tools" style="color:#930500; margin-right: 8px;"></i> Tools & Software Unggulan</h5>
+                    <div class="d-flex flex-wrap mt-3">
+                        <span class="tools-badge-modern"><i class="fab fa-figma"></i> Figma</span>
+                        <span class="tools-badge-modern"><i class="fas fa-video"></i> After Effects</span>
+                        <span class="tools-badge-modern"><i class="fas fa-camera"></i> Photoshop</span>
+                        <span class="tools-badge-modern"><i class="fas fa-paint-brush"></i> Adobe Illustrator</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact" class="py-20 border-t border-purple-900/50 text-center">
-        <h2 class="text-4xl font-bold mb-6 text-white">Mari Berkolaborasi!</h2>
-        <p class="text-slate-400 mb-10 max-w-md mx-auto">Saya selalu terbuka untuk proyek baru, kolaborasi riset, atau sekadar berbagi diskusi teknologi.</p>
-        <div class="flex justify-center gap-4">
-            <a href="mailto:email@example.com" class="bg-purple-900/50 border border-purple-500 px-6 py-3 rounded-full hover:bg-purple-600 transition">Email Saya</a>
-            <a href="#" class="bg-slate-800 px-6 py-3 rounded-full hover:bg-slate-700 transition">LinkedIn</a>
+    <section id="certifications" class="my-5 py-4">
+        <div class="row text-center mb-4">
+            <div class="col-12">
+                <h2 class="section-title-modern" style="display: inline-block;">📜 Sertifikasi & Aktivitas</h2>
+                <p class="mt-3" style="color: #6b5b4e;">Pelatihan profesional dan kegiatan volunteering yang telah saya ikuti</p>
+            </div>
         </div>
-        <p class="mt-12 text-slate-600 text-sm">© 2026 Rahayu Rahmadhani. Built with passion.</p>
-    </footer>
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="seertifikat dicoding ai.jpg" alt="Sertifikat Dicoding AI" class="cert-img" onerror="this.onerror=null; this.src='https://placehold.co/400x200/FFF8E7/930500?text=Dicoding+AI'">
+                    </div>
+                    <div class="cert-body">
+                        <div>
+                            <div class="cert-title"><i class="fas fa-robot"></i> AI Fundamentals</div>
+                            <p class="small text-muted">Pengenalan kecerdasan buatan & implementasi dasar</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="cert-badge"><i class="fas fa-calendar-alt"></i> Dicoding Academy</span>
+                            <a href="#" class="btn-view-cert" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="sertifikat kominfo data analis.jpg" alt="Sertifikat Kominfo Data Analyst" class="cert-img" onerror="this.onerror=null; this.src='https://placehold.co/400x200/FFF8E7/930500?text=Data+Analyst'">
+                    </div>
+                    <div class="cert-body">
+                        <div>
+                            <div class="cert-title"><i class="fas fa-chart-line"></i> Data Analyst</div>
+                            <p class="small text-muted">Analisis data, visualisasi, dan interpretasi data</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="cert-badge"><i class="fas fa-building"></i> Kominfo</span>
+                            <a href="#" class="btn-view-cert" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="cert-card">
+                    <div class="cert-img-wrapper">
+                        <img src="sertifikasi kewirausahaan digital.jpg" alt="Sertifikasi Kewirausahaan Digital" class="cert-img" onerror="this.onerror=null; this.src='https://placehold.co/400x200/FFF8E7/930500?text=Digital+Entrepreneur'">
+                    </div>
+                    <div class="cert-body">
+                        <div>
+                            <div class="cert-title"><i class="fas fa-chalkboard-teacher"></i> Kewirausahaan Digital</div>
+                            <p class="small text-muted">Strategi bisnis digital, pemasaran & inovasi</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="cert-badge"><i class="fas fa-certificate"></i> Kominfo</span>
+                            <a href="#" class="btn-view-cert" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="activity-card">
+                    <div class="activity-img-wrapper">
+                        <img src="sertifikasi konten kreator.jpg" class="activity-img" alt="Sertifikasi Konten Kreator" onerror="this.onerror=null; this.src='https://placehold.co/400x200/FFF8E7/930500?text=Konten+Kreator'">
+                    </div>
+                    <div class="activity-body">
+                        <div>
+                            <div class="activity-title"><i class="fas fa-video"></i> Konten Kreator</div>
+                            <p class="small text-muted">Sertifikasi bidang konten kreator & produksi digital</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="activity-badge"><i class="fas fa-certificate"></i> Kominfo</span>
+                            <a href="#" class="btn-view-activity" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="activity-card">
+                    <div class="activity-img-wrapper">
+                        <img src="sertifikasi volunter pejuang kanker.jpg" class="activity-img" alt="Relawan Pejuang Kanker" onerror="this.onerror=null; this.src='https://placehold.co/400x200/FFF8E7/930500?text=Pejuang+Kanker'">
+                    </div>
+                    <div class="activity-body">
+                        <div>
+                            <div class="activity-title"><i class="fas fa-heartbeat"></i> Volunteer Pejuang Kanker</div>
+                            <p class="small text-muted">Kegiatan sosial mendukung pejuang kanker</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="activity-badge"><i class="fas fa-hands-helping"></i> Volunteering</span>
+                            <a href="#" class="btn-view-activity" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="activity-card">
+                    <div class="activity-img-wrapper">
+                        <img src="sertifikasi volunter yakult.jpg" class="activity-img" alt="Relawan Yakult" onerror="this.onerror=null; this.src='https://placehold.co/400x200/FFF8E7/930500?text=Yakult+Volunteer'">
+                    </div>
+                    <div class="activity-body">
+                        <div>
+                            <div class="activity-title"><i class="fas fa-hand-holding-heart"></i> Volunteer Yakult</div>
+                            <p class="small text-muted">Partisipasi dalam kegiatan edukasi & kesehatan</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="activity-badge"><i class="fas fa-users"></i> Volunteering</span>
+                            <a href="#" class="btn-view-activity" target="_blank"><i class="fas fa-external-link-alt"></i> Lihat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projek" class="my-5 py-4">
+        <div class="row text-center mb-4">
+            <div class="col-12">
+                <h2 class="section-title-modern" style="display: inline-block;">💻 Projek Kreatif</h2>
+                <p class="mt-3" style="color: #6b5b4e;">Dokumentasi visual dan pameran hasil karya teknologi digital</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card card-glass shadow-sm border-0 overflow-hidden" style="border-radius: 1.5rem;">
+                    <div class="p-3" style="background: #faf5ea;">
+                        <div class="embed-responsive embed-responsive-16by9" style="border-radius: 0.8rem; overflow: hidden; border: 1px solid rgba(147, 5, 0, 0.2);">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/ZzzA_j82Cy0" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="card-body p-4" style="background-color: #FFFFFF;">
+                        <span class="badge mb-2" style="background-color: rgba(147, 5, 0, 0.1); color: #930500; font-weight: 600;">Video Showcase</span>
+                        <h4 class="font-weight-bold text-dark">Video proyek portable smart solar power stasion</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">
+                            PORTABLE SMART SOLAR POWERSTATION adalah sebuh inovasi dari anak smk mengenai sebuah lomba projek yang di adakan oleh kihajar stem. Di sini kami mengambil PORTABLE SMART SOLAR POWERSTATION  di karenakan penggunaan yang mudah di dapat dan efisien untuk di gunakan sehari-hari. menggunakan tabel surya untuk menyerap panas dari panas matahari kota makassar yang akan di menjadi sebuah energi listrik. terinspirasi dari Kota Makassar yang memiliki iklim tropis yang panas di kota timur yang memberikan kami ide untuk membuat PORTABLE SMART SOLAR POWERSTATION tersebut. Bahan dari tempat PORTABLE SMART SOLAR POWERSTATION  kami memakai 3D filament yang di panaskan, untuk membuat tempat. Butuh waktu sekitar 1 minggu agar kerangka tempat dapat terbuat jadi. PORTABLE SMART SOLAR POWERSTATION  di buat untuk sebagai inovasi siswa smk dalam ajang kihajar stem 2024. PORTABLE SMART SOLAR POWERSTATION  juga telah di tanda tangani oleh GUBERNUR SULWESI SELATAN
+                          </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="publikasi" class="my-5 py-4">
+        <div class="row text-center mb-4">
+            <div class="col-12">
+                <h2 class="section-title-modern" style="display: inline-block;">📖 Publikasi Digital</h2>
+                <p class="mt-3" style="color: #6b5b4e;"><Menampilkan modul aplikasi IOT</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-9">
+                <div class="card card-glass shadow-sm border-0 overflow-hidden" style="border-radius: 1.5rem;">
+                    <div class="p-3" style="background: #faf5ea;">
+                        <div class="embed-responsive" style="border-radius: 0.8rem; overflow: hidden; border: 1px solid rgba(147, 5, 0, 0.2); height: 450px;">
+                            <iframe class="embed-responsive-item" src="https://online.fliphtml5.com/qrnrj/qkik/" seamless="seamless" scrolling="no" frameborder="0" allowtransparency="true" allowfullscreen="true"></iframe>
+                        </div>
+                    </div>
+                    <div class="card-body p-4" style="background-color: #FFFFFF;">
+                        <span class="badge mb-2" style="background-color: rgba(147, 5, 0, 0.1); color: #930500; font-weight: 600;">Interactive Flipbook</span>
+                        <h4 class="font-weight-bold text-dark">Modul aplikasi IOT</h4>
+                        <p class="text-muted" style="font-size: 0.9rem;">
+                            rojek ini merupakan projek akhir mata pelajaran pilihan jurusan teknik komputer dan jaringan, yang dimana di sini siswa di arahkan agar membuat sebuah modul pembelajaran dari apa yang di pelajari selama sekolah 2 tahun dari kelas 10 sampai Kelas 11 di SMK Telkom Makassar, mata pelajaran yang dimana tugas projek ini adalah hasil. mata pelajarn ini berfokus pada penerapan iot yang di mana akan di rangkum menjadi sebuh modul. Untuk projek akhir ini, bertujuan agar siswa siswi paham cara implementasi kan iot dalam mata pelajaran ini seperti apa. Dan bagaimana kegunaan nya di kehidupan sehari-hari. Modul ini di buat dalam modul buku agar, para pembaca dapat lebih mudah mengakses memakai  gadget atau pun laptop mereka.
+                        </p>
+                        <a href="https://online.fliphtml5.com/qrnrj/qkik/" target="_blank" class="btn-view-award mt-2">
+                            <i class="fas fa-external-link-alt"></i> Baca di Tab Baru
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="awards" class="my-5 py-4">
+        <div class="row text-center mb-4">
+            <div class="col-12">
+                <h2 class="section-title-modern" style="display: inline-block;">🏆 Piagam, Prestasi & Karya</h2>
+                <p class="mt-3" style="color: #6b5b4e;">Penghargaan kompetisi, apresiasi prestasi, dan liputan media inspiratif</p>
+            </div>
+        </div>
+        
+        <div class="row mb-4">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="award-card">
+                    <div class="award-img-wrapper">
+                        <div class="award-text-header">Duta Rabbani 2026 (DPRMPR)</div>
+                    </div>
+                    <div class="award-body">
+                        <div>
+                            <div class="award-title"><i class="fas fa-crown"></i> Kandidat Duta Rabbani 2026 (DPRMPR)</div>
+                            <p class="award-desc">Ajang pemilihan duta inspiratif nasional yang diselenggarakan oleh Rabbani untuk mewakili generasi muda yang kreatif, berprestasi, dan berkarakter islami. Dukung perjalanan saya dengan memberikan suara!</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="award-badge"><i class="fas fa-star"></i> Pemilihan Duta</span>
+                            <a href="https://dprmpr.rabbani.id/vote/DPRMPR20260109184641" class="btn-gradient px-3 py-2 text-white" style="font-size:0.75rem; border-radius:40px;" target="_blank"><i class="fas fa-vote-yea mr-1"></i> Vote Sekarang</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="award-card">
+                    <div class="award-img-wrapper" style="padding: 1.2rem;">
+                        <div class="embed-responsive embed-responsive-16by9" style="border-radius: 0.8rem; overflow: hidden; border: 1px solid rgba(147, 5, 0, 0.2);">
+                            <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/SurnB3GIY-o" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="award-body">
+                        <div>
+                            <div class="award-title"><i class="fab fa-google"></i> Google Student Ambassador 2026</div>
+                            <p class="award-desc">Video presentasi seleksi kandidat Google Student Ambassador mewakili Politeknik Negeri Ujung Pandang.</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="award-badge"><i class="fas fa-video"></i> Video Profil</span>
+                            <a href="https://youtu.be/SurnB3GIY-o" class="btn-view-award" target="_blank"><i class="fas fa-external-link-alt"></i> Tonton di YouTube</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mb-4">
+            <div class="col-md-6 mb-4 mb-md-0">
+                <div class="award-card">
+                    <div class="award-img-wrapper">
+                        <div class="award-text-header" style="color: #800020;">KeKeR Fajar Online</div>
+                    </div>
+                    <div class="award-body">
+                        <div>
+                            <div class="award-title"><i class="fas fa-globe"></i> Liputan Berita Online KeKeR Fajar</div>
+                            <p class="award-desc">Apresiasi bakat seni visual bermotif legendaris "Starry Night" yang dipublikasikan secara daring oleh media KeKeR Harian Fajar saat menempuh pendidikan di SMK Telkom Makassar.</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="award-badge"><i class="fas fa-hashtag"></i> Berita Online</span>
+                            <a href="#" class="btn-view-award"><i class="fas fa-external-link-alt"></i> Baca Artikel</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="award-card">
+                    <div class="award-img-wrapper">
+                        <img src="koran.jpg" alt="Asah Percaya Diri" class="award-img" onerror="this.onerror=null; this.src='https://placehold.co/600x335/e4dfd5/4a443c?text=Kliping+Harian+Fajar+|+Asah+Percaya+Diri';">
+                    </div>
+                    <div class="award-body">
+                        <div>
+                            <div class="award-title"><i class="fas fa-newspaper"></i> Ikut Lomba Asah Bakat, Rahayu Percaya Diri</div>
+                            <p class="award-desc">Liputan media cetak Harian Fajar mengenai pengalaman mengikuti perlombaan untuk mengasah kemampuan dan tampil dengan rasa percaya diri.</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="award-badge"><i class="fas fa-archive"></i> Arsip Media Cetak</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <div class="award-card">
+                    <div class="award-img-wrapper">
+                        <img src="piagram kihajar.jpg" alt="Kihajar STEM Nasional 2024" class="award-img" onerror="this.onerror=null; this.src='https://placehold.co/400x250/FFF8E7/930500?text=Kihajar+STEM+2024';">
+                    </div>
+                    <div class="award-body">
+                        <div>
+                            <div class="award-title"><i class="fas fa-trophy"></i> Piagram penghargaan Kihajar STEM 2024</div>
+                            <p class="award-desc" style="font-size:0.8rem;">Meraih Juara 2 tingkat nasional dalam kompetisi bergengsi Kihajar STEM tingkat nasional tingkat SMK, Serta sertifikat peresmian dari Gubernur Sulawesi selatan Andi Sudirman Sulaiman.</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="award-badge"><i class="fas fa-award"></i> Prestasi Nasional</span>
+                            <a href="#" class="btn-view-award"><i class="fas fa-search"></i> Lihat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="award-card">
+                    <div class="award-img-wrapper">
+                        <img src="kihajar 1.jpg" alt="Kihajar Competition" class="award-img" onerror="this.onerror=null; this.src='https://placehold.co/400x250/FFF8E7/930500?text=Sertifikat+Kihajar';">
+                    </div>
+                    <div class="award-body">
+                        <div>
+                            <div class="award-title"><i class="fas fa-certificate"></i> Kihajar STEM jenjang profinsi</div>
+                            <p class="award-desc" style="font-size:0.8rem;">Sertifikat juara 2 tingkat profinsil jenjang SMK tahun 2024</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="award-badge"><i class="fas fa-stamp"></i> Prestasi provinsi</span>
+                            <a href="#" class="btn-view-award"><i class="fas fa-search"></i> Lihat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4 mb-4">
+                <div class="award-card">
+                    <div class="award-img-wrapper">
+                        <img src="lomba poster.jpg" alt="Lomba Poster Kreatif" class="award-img" onerror="this.onerror=null; this.src='https://placehold.co/400x250/FFF8E7/930500?text=Poster+Kreatif';">
+                    </div>
+                    <div class="award-body">
+                        <div>
+                            <div class="award-title"><i class="fas fa-palette"></i> Lomba Poster Kreatif</div>
+                            <p class="award-desc" style="font-size:0.8rem;">Eksplorasi kreativitas desain grafis dan penyampaian pesan komunikasi visual lewat kompetisi perancangan poster.</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-2">
+                            <span class="award-badge"><i class="fas fa-paint-brush"></i> Desain Grafis</span>
+                            <a href="#" class="btn-view-award"><i class="fas fa-search"></i> Lihat</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="my-5 py-4">
+        <div class="row text-center mb-5">
+            <div class="col-12">
+                <h2 class="section-title-modern">📬 Hubungi Saya</h2>
+                <p class="mt-3" style="color: #6b5b4e;">Mari berdiskusi seputar peluang kolaborasi projek cyber security, UI/UX, maupun desain</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 mb-4">
+                <div class="card-glass p-4 h-100">
+                    <h5 class="font-weight-bold mb-4" style="color:#930500;">Informasi Kontak</h5>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="contact-icon mr-3"><i class="fas fa-envelope"></i></div>
+                        <div>
+                            <span class="d-block text-muted small">Email</span>
+                            <strong style="color: #2c2823;">enayflow@gmai.com</strong>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="contact-icon mr-3"><i class="fas fa-map-marked-alt"></i></div>
+                        <div>
+                            <span class="d-block text-muted small">Alamat Kampus</span>
+                            <strong style="color: #2c2823;">Politeknik Negeri Ujung Pandang, Makassar</strong>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <div class="contact-icon mr-3"><i class="fab fa-linkedin"></i></div>
+                        <div>
+                            <span class="d-block text-muted small">LinkedIn</span>
+                            <a href="#" target="_blank" style="color:#930500; font-weight:600;">Rahayu Rahmadhani</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-7 mb-4">
+                <div class="card-glass p-4">
+                    <form>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="name" class="small font-weight-bold">Nama Lengkap</label>
+                                <input type="text" class="form-control" id="name" placeholder="Nama Anda" required>
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="email" class="small font-weight-bold">Alamat Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="enayflow@gmail.com" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="small font-weight-bold">Subjek Pesan</label>
+                            <input type="text" class="form-control" id="subject" placeholder="Judul keperluan Anda">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="small font-weight-bold">Isi Pesan</label>
+                            <textarea class="form-control" id="message" rows="4" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn-gradient w-100 mt-2"><i class="fas fa-paper-plane mr-2"></i>Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer class="footer-modern text-center">
+    <div class="container">
+        <p class="mb-2 font-weight-bold" style="letter-spacing: 0.5px;">&copy; 2026 Rahayu Rahmadhani. All Rights Reserved.</p>
+        <p class="small text-muted mb-0">Didesain dengan dedikasi menggunakan Bootstrap &amp; Estetika Seni Kreatif.</p>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 
 </body>
 </html>
